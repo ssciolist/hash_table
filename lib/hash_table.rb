@@ -36,19 +36,23 @@ class HashTable
     end
   end
 
+  def collect_keys(val)
+    if !val.nil?
+      keys = []
+      current_node = val
+      keys << current_node.value.keys[0]
+      until current_node.next_node.nil?
+        keys << current_node.value.keys[0]
+        current_node = current_node.next_node
+      end
+    else
+    end
+    keys
+  end
+
   def print_table
+    @array.each_with_index do |val, index|
+      puts index, collect_keys(val)
+    end
   end
 end
-
-
-
-
-  def push(key, value)
-    i = calculate_index(key)
-    array[i].append({key => value})
-  end
-
-  def get(key)
-    i = calculate_index(key)
-    array[i].find(key)
-  end

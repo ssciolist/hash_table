@@ -32,4 +32,17 @@ class HashTableTest < Minitest::Test
     assert_equal 55, ht.get('Sallx')
     assert_equal false, ht.get('Angie')
   end
+
+  def test_it_prints
+    ht = HashTable.new(10)
+    ht.put('Janice', 5)
+    ht.put('Sallx', 55)
+    ht.put('Bernard', 5)
+    ht.put('Amos', 55)
+    ht.put('Naomi', 5)
+    ht.put('Megan', 55)
+    ht.put('Bobbi', 5)
+    ht.put('Ana', 55)
+    require 'pry'; binding.pry
+  end
 end
